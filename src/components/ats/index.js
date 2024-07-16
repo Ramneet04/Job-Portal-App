@@ -23,7 +23,7 @@ const PdfExtractor = () => {
     setLoading(true);
     try {
       const response = await axios({
-        url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${process.env.GOOGLE_API_KEY}`,
+        url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyCivDuBJ_D3vbPnVQ7Br2eyqgbxS571Gwc`,
         method: 'POST',
         data: {
           contents: [
