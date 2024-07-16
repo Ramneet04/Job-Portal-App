@@ -3,7 +3,8 @@ import HomepageButtonControls from "@/components/homepage-button-controls";
 import { Button } from "@/components/ui/button";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { Fragment } from "react";
+import { Fragment, lazy } from "react";
+
 
 async function Home() {
   const user = await currentUser();

@@ -1,8 +1,9 @@
+import dynamic from 'next/dynamic'
 import {
   fetchJobApplicationsForCandidate,
   fetchJobsForCandidateAction,
 } from "@/actions";
-import CandidateActivity from "@/components/candidate-activity";
+const CandidateActivity = dynamic(() => import('@/components/candidate-activity'))
 import { currentUser } from "@clerk/nextjs/server";
 
 export default async function Activity() {
