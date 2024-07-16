@@ -26,20 +26,33 @@ const ChatBot = () => {
         setLoading(false);
     }
   return (
-    <div className='flex flex-col justify-center items-center mx-auto mt-10 h-full w-[85%] gap-6'>
-        <h1 className='text-4xl font-bold text-slate-900 dark:text-white'>JOBSCO CHAT AI</h1>
-        <div className='flex gap-2 items-center font-bold'>
-        <p className='text-sky-950 text-xl font-bold'>Ask me anything?</p>
-        <div className='text-xl'><Bot color='black' size={30}/></div>
-        </div>
-        <input type='text' className='w-full py-4 px-2 rounded-xl bg-slate-950 text-white outline-sky-950 shadow-md shadow-sky-900' placeholder='Message CHAT AI' value={question} onChange={(e) => setQuestion(e.target.value)}></input>
-        <Button onClick={generateAnswer}>Generate Answer</Button>
-        <div className='text-slate-900 dark:text-white text-lg font-semibold'>
-            {
-                loading ? <ChatSpinner/> : answer 
-            }
-        </div>
+<div className="min-h-screen bg-gray-100 dark:bg-slate-950 flex items-center justify-center p-6">
+  <div className="bg-white rounded-lg shadow-lg p-8 max-w-lg w-full">
+    <h1 className="text-4xl font-bold mb-6 text-center text-slate-900">JOBSCO CHAT AI</h1>
+    <div className="flex gap-2 items-center font-bold">
+      <p className="text-xl text-sky-950 ">Ask me anything?</p>
+      <div className="text-xl"><Bot color="black" size={30} /></div>
     </div>
+    <input 
+      type="text" 
+      className="w-full py-3 px-4 rounded-lg bg-slate-950 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-950 shadow-md mt-4"
+      placeholder="Message CHAT AI" 
+      value={question} 
+      onChange={(e) => setQuestion(e.target.value)}
+    />
+    <button 
+      onClick={generateAnswer} 
+      className={`w-full py-3 px-6 bg-sky-950 text-white rounded-lg shadow-md hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-sky-950 mt-4`}
+    >
+      {loading ? 'Generating...' : 'Generate Answer'}
+    </button>
+    <div className="text-lg font-semibold text-slate-900  mt-6">
+      {loading ? <ChatSpinner /> : answer}
+    </div>
+  </div>
+</div>
+
+
   )
 }
 
